@@ -1,0 +1,70 @@
+/* Custom window frame styling */
+.custom-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2e7d32;
+  color: white;
+  padding: 5px 10px;
+  height: 30px;
+  -webkit-app-region: drag;
+  /* Allows dragging the window */
+  user-select: none;
+}
+
+.window-title {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.window-controls {
+  display: flex;
+  -webkit-app-region: no-drag;
+  /* Allows clicking buttons */
+}
+
+.window-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.window-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.window-btn.close:hover {
+  background-color: #e81123;
+}
+
+/* Custom button textures using embedded SVG */
+.minimize-btn {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M11 6.5v-1h-10v1h10z'/%3E%3C/svg%3E");
+}
+
+.maximize-btn {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M3 3v6h6v-6h-6zm5 5h-4v-4h4v4z'/%3E%3C/svg%3E");
+}
+
+.close-btn {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6.707 6l2.646-2.646.708.708-2.647 2.646 2.647 2.646-.708.708-2.646-2.647-2.646 2.647-.708-.708 2.647-2.646-2.647-2.646.708-.708 2.646 2.647z'/%3E%3C/svg%3E");
+}
+
+/* Rest of your existing styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.content {
+  padding: 20px;
+}
