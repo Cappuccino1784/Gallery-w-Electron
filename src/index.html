@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Watering Timer</title>
+    <title>Mitboma's Gallery</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <div class="custom-title-bar">
-        <div class="window-title">Plant Watering Timer</div>
+        <p id="title">Mitboma's Gallery</p>
         <div class="window-controls">
-            <button class="window-btn minimize-btn" id="minimize-btn"></button>
-            <button class="window-btn close-btn close" id="close-btn"></button>
+            <button tabindex="-1" class="window-btn minimize-btn" id="minimize-btn"></button>
+            <button tabindex="-1" class="window-btn close-btn close" id="close-btn"></button>
         </div>
     </div>
-    
-    
+    <div id="home">
+        <div class="home-btns">
+        <img id="home-img" src="./assets/home img.png">
+        </div>
+        <div class="home-btns">
+            <button class="btn" id="upload-btn">Upload</button>
+            <button class="btn" id="gallery-btn">Gallery</button>
+        </div>
+    </div>
+
+
+
 
     <script src="render.js"></script>
 </body>
+
 </html>
