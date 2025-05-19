@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Center</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="custom-title-bar">
+        <p id="title">Pets</p>
+        <div class="window-controls">
+            <button tabindex="-1" class="window-btn minimize-btn" id="minimize-btn"></button>
+            <button tabindex="-1" class="window-btn close-btn close" id="close-btn"></button>
+        </div>
+    </div>
+    <div class="" id="home">
+        <button id="exit"></button>
+        <table id="pet-table">
+            <tr>
+                <td><img class="pet" src="./assets/mochi gif.gif" alt="Happy Dog" onclick="openModal(this)"></td>
+                <td><img class="pet" src="./assets/sakamoto gif.gif" alt="Happy Dog" onclick="openModal(this)"></td>
+            </tr>
+            <tr>
+                <td><img class="pet" src="./assets/doggo gif.gif" alt="Happy Dog" onclick="openModal(this)"></td>
+                <td><img class="pet" src="./assets/matcha gif.gif" alt="Happy Dog" onclick="openModal(this)"></td>
+            </tr>
+        </table>
+
+        <div id="modal" onclick="closeModal(event)">
+            <div id="modal-content">
+                <img id="modal-img" src="" alt="" style="width: 300px; height: 300px;">
+                <p id="modal-desc"></p>
+                <button id="model-btn" onclick="closeModal(event)">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="render.js"></script>
+    <script src="pets.js"></script>
+</body>
+
+</html>
