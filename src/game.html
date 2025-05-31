@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Center</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="loading-screen" style="display: none">
+        <div class="loader"></div>
+    </div>
+    <div id="shop-overlay" style="display: none;">
+        <div id="shop-popup">
+            <button onclick="closeShop()" id="close-shop"></button>
+            <p id="shop-gold-text">Gold: <span id="shop-gold"></span></p>
+            <div id="shop-item-info">
+                <p class="shop-message" id="shop-message" style="display: none;"></p>
+                <p class="shop-message" id="shop-item-desc">
+
+                    Name: <span id="weapon-name"></span> <br>
+                    Attack: <span id="weapon-attack"></span> <br>
+                    Price: <span id="weapon-price"></span> <br>
+                    Description:<br>
+                    <span id="weapon-desc"></span>
+
+                </p>
+                <img id="weapon-image" alt="Shop">
+            </div>
+            <div class="options">
+                <button class="action-button" onclick="buyWeapon()">Buy</button>
+                <button class="action-button" onclick="previousWeapon()">Previous</button>
+                <button class="action-button" onclick="nextWeapon()">Next</button>
+            </div>
+        </div>
+    </div>
+    <div id="dialog-overlay" class="overlay hidden">
+        <img src="./assets/sakamoto gif.gif" id="char1" class="character left" />
+        <img src="char2.png" id="char2" class="character right" />
+        <div class="dialog-box">
+            <p id="dialog-text"></p>
+            <button class="action-button" id="next-btn">Next</button>
+        </div>
+    </div>
+    <div id="fight-overlay" class="overlay hidden">
+        <div class="battlefield">
+            <div id="sprite-container">
+                <div class="enemy">
+                    <div class="status">
+                        <p>Wild Wolf</p>
+                        <p>HP: <span id="enemy-hp">100</span></p>
+                    </div>
+                    <img src="enemy.png" class="sprite" />
+                </div>
+
+                <div class="player">
+                    <img src="./assets/sakamoto gif.gif" class="sprite" />
+                    <div class="status">
+                        <p>Your Pet</p>
+                        <p>HP: <span id="player-hp">100</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <button onclick="playerAttack(20)">Tackle</button>
+                <button onclick="playerAttack(35)">Bite</button>
+                <button onclick="playerAttack(15)">Scratch</button>
+                <button onclick="exitBattle()">Run</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-title-bar">
+        <p id="title">Mitboma's Adventure</p>
+        <div class="window-controls">
+            <button tabindex="-1" class="window-btn minimize-btn" id="minimize-btn"></button>
+            <button tabindex="-1" class="window-btn close-btn close" id="close-btn"></button>
+        </div>
+    </div>
+    <div class="home">
+        <button class="pointer-btn" id="exit"></button>
+        <div id="game">
+            <div class="game-container">
+                <div id="flexwrapper">
+                    <div class="image-display">
+                        <img id="scene-image" src="./assets/game-start.gif" alt="Scene image">
+                    </div>
+                    <div id="side-panel">
+                        <div class="stats">
+                            <div>Thông tin</div>
+                            <div>HP: <span id="health">100</span>/100</div>
+                            <div>Vàng: <span id="gold">0</span></div>
+                            <div>Attack Damage: <span id="attack">10</span></div>
+                        </div>
+                        <div class="inventory">
+                            <div>Túi</div>
+                            <div id="inventory-items">Không có gì</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-box" id="text-box">
+                    Chào mừng đến với cuộc phiêu lưu của Mitboma! Bạn đã sẵn sàn chưa?
+                </div>
+
+                <button class="action-button" id="button1">Start</button>
+                <button class="action-button" id="button2" onclick="startGame()">Start</button>
+                <button class="action-button" id="button3">Start</button>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <script src="./render.js"></script>
+    <script src="./game.js"></script>
+</body>
+
+</html>

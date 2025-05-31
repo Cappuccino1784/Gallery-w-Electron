@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
@@ -9,6 +10,8 @@ body {
   background-size: cover;
   color: #333;
   overflow: hidden;
+  cursor: url('./assets/cursor.png'), auto;
+
 }
 
 
@@ -24,6 +27,7 @@ body {
   -webkit-app-region: drag;
   /* Allows dragging the window */
   user-select: none;
+
 }
 
 
@@ -39,7 +43,8 @@ body {
 }
 
 .window-btn:hover {
-  background: rgba(100, 27, 46, 0.5);
+  background-color: rgba(131, 57, 77, 0.5);
+  opacity: 0.5;
 }
 
 .window-controls {
@@ -70,7 +75,7 @@ body {
   margin: 0;
 }
 
-#home {
+.home {
   border: 3px solid #8A2D3B;
   height: calc(100vh - 56px);
 
@@ -134,23 +139,50 @@ body {
 
 /*  pets page   */
 
-#exit {
+.pointer-btn {
   background-image: url(./assets/next\ btn.png);
-  display: block;
-  width: 35px;
-  height: 35px;
   border: none;
   background-size: cover;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  rotate: 180deg;
   margin: 10px;
 }
 
-#pet-table {
+.pointer-btn:hover {
+  animation: rotate 0.5s infinite;
+}
+
+#exit {
+  display: block;
+  rotate: 180deg;
+  width: 35px;
+  height: 35px;
+}
+
+#table-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#left {
+  rotate: 180deg;
+  width: 50px;
+  height: 50px;
+  align-self: center;
+}
+
+#right {
+  width: 50px;
+  height: 50px;
+  align-self: center;
+}
+
+.pet-table {
   justify-self: center;
+  background-color: rgba(100, 27, 46, 0.5);
 
 }
 
@@ -177,8 +209,332 @@ body {
   height: 500px;
   padding: 20px;
   text-align: center;
+  border: 6px solid #64232d;
 }
 
 #modal-btn {
-  
+  background-image: url('./assets/close\ btn.png');
+  background-size: cover;
+  margin-left: 5px;
+  -webkit-app-region: no-drag;
+  display: block;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  justify-self: center;
+  bottom: 0;
+
+}
+
+#modal-name {
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+  font-size: 25px;
+}
+
+#modal-desc {
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+
+/*   custom cursor   */
+#custom-cursor {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.1s ease;
+}
+
+
+
+/* game */
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 300px;
+  height: 300px;
+  background-image: url(./assets/loading.gif);
+  background-size: cover;
+}
+
+/* shop */
+#shop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#shop-popup {
+  width: 700px;
+  height: 474px;
+  text-align: center;
+  position: relative;
+  background-image: url(./assets/shop-bg.png);
+  background-size: cover;
+}
+
+#shop-popup .options {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 1px;
+}
+
+#shop-popup .options button {
+  margin: 15px 15px 30px 15px;
+  min-width: 25%;
+}
+
+#shop-gold-text {
+  position: fixed;
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+  font-size: 38px;
+  margin-left: 35px;
+}
+
+#shop-item-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 150px;
+  gap: 20px;
+}
+
+.shop-message {
+  text-align: left;
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+  background-color: #8A2D3B;
+  border: 5px solid #64232d;
+  width: 30%;
+
+}
+
+#weapon-image {
+  width: 350px;
+  height: 210px;
+  margin-bottom: 16px;
+  border: 5px solid #64232d;
+}
+
+#close-shop {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-image: url(./assets/close\ btn.png);
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+
+
+/* game */
+
+#game {
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+  background-color: #BE5B50;
+  border: 10px solid #64232d;
+  width: 90%;
+  height: 75%;
+  justify-self: center;
+}
+
+.game-container {
+  justify-items: center;
+  padding: 20px;
+}
+
+.action-button {
+  display: inline-block;
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+  font-size: 15px;
+  height: 50px;
+  background-color: #8A2D3B;
+  border: 3px solid #64232d;
+  margin-top: 10px;
+}
+
+#scene-image {
+  height: 200px;
+  border: 7px solid#64232d;
+}
+
+#flexwrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+#side-panel {
+  margin: 0 0 0 10px;
+  width: 200px;
+}
+
+.inventory {
+  background-color: #8A2D3B;
+  padding: 5px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #8A2D3B;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.text-box {
+  background-color: #8A2D3B;
+  border: 3px solid #64232d;
+  width: 89%;
+  text-align: center;
+  padding: 10px;
+  height: 60px;
+}
+
+.action-button:hover {
+  background-color: rgba(131, 57, 77, 0.5);
+}
+
+/* dialog */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1000;
+  font-size: 48px;
+  color: white;
+}
+
+.character {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.character.active {
+  opacity: 1;
+}
+
+.dialog-box {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8A2D3B;
+  font-family: "Pixelify Sans", sans-serif;
+  border: 8px solid #64232d;
+  color: white;
+  padding: 10px;
+  width: 600px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.character {
+  height: 300px;
+  width: 300px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* fight */
+
+.battlefield {
+  width: 700px;
+  height: 500px;
+  background-image: url(./assets/fight-bg-1.png);
+  background-size: cover;
+  border: 9px solid #64232d;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+}
+
+.enemy,
+.player {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+#sprite-container {
+  gap: 10px;
+}
+
+.sprite {
+  width: 160px;
+}
+
+.status {
+  background: #BE5B50;
+  border: 5px solid #64232d;
+  font-size: 20px;
+  padding: 0 20px;
+
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.actions button {
+  font-family: "Pixelify Sans", sans-serif;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #8A2D3B;
+  border: 5px solid #64232d;
+}
+
+.actions button:hover {
+  background-color: rgba(131, 57, 77, 0.5);
 }
